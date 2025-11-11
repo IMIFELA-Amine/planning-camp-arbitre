@@ -1,0 +1,80 @@
+/* Style général de la page */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+.container {
+    max-width: 1400px;  /* La largeur max, "mi-rectangle" */
+    margin: 30px auto;  /* 30px haut/bas, et "auto" gauche/droite pour CENTRER */
+    padding: 0 15px;    /* Un peu d'espace sur les côtés (pour mobile) */
+    box-sizing: border-box; /* Gère le padding correctement */
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+/* Style du tableau */
+table {
+    width: 100%; /* Prend toute la largeur */
+    border-collapse: collapse; /* Belles bordures fusionnées */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow: hidden; /* Pour que le radius s'applique aux coins */
+}
+
+/* Style des cellules (en-tête et corps) */
+th, td {
+    border: 1px solid #e0e0e0;
+    padding: 16px;
+    text-align: center;
+    vertical-align: middle; /* Aligne le texte en haut */
+}
+
+/* Style de l'en-tête (bleu, comme dans l'exemple de la fac) */
+thead {
+    background-color: #34495e; /* Un bleu/gris foncé */
+    color: white;
+}
+
+thead th {
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Style du corps du tableau */
+tbody tr:nth-child(even) {
+    background-color: #fdfdfd; /* Une ligne sur deux légèrement grisée */
+}
+
+tbody tr:hover {
+    background-color: #f0f4f8; /* Effet au survol */
+}
+
+/* Style de la première colonne (Horaires) */
+tbody td:first-child {
+    width: 130px; /* Largeur fixe pour les horaires */
+    font-weight: 700;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+/* Style pour la ligne de la PAUSE */
+.pause-row td {
+    text-align: center;
+    font-weight: bold;
+    background-color: #ecf0f1;
+    color: #7f8c8d;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px; /* Espace au-dessus du copyright */
+    padding: 15px;
+    font-size: 0.9em; /* Texte légèrement plus petit */
+    color: #7f8c8d; /* Couleur grise discrète */
+}
