@@ -14,6 +14,27 @@ body {
     margin-bottom: 20px; /* Espace entre le logo et le titre H1 */
 }
 
+.table-responsive {
+    /* Permet au tableau de défiler horizontalement */
+    overflow-x: auto; 
+    
+    /* Pour un défilement plus fluide sur iPhone/iPad */
+    -webkit-overflow-scrolling: touch; 
+
+    /* Optionnel: pour s'assurer qu'il n'y ait pas de marge ou padding qui gêne le défilement */
+    margin-left: -15px; /* Compense le padding du .container */
+    margin-right: -15px; /* Compense le padding du .container */
+    padding-left: 15px; /* Ajoute un padding interne pour aligner le contenu du tableau */
+    padding-right: 15px; /* Ajoute un padding interne pour aligner le contenu du tableau */
+}
+
+/* Ajustement pour le container sur mobile, pour que le défilement du tableau soit fluide */
+@media (max-width: 768px) { /* Applique ces styles seulement sur les petits écrans */
+    .container {
+        padding: 0; /* Supprime le padding du container pour que le tableau puisse prendre toute la largeur */
+    }
+}
+
 .container {
     max-width: 1400px;  /* La largeur max, "mi-rectangle" */
     margin: 30px auto;  /* 30px haut/bas, et "auto" gauche/droite pour CENTRER */
@@ -80,6 +101,40 @@ tbody td:first-child {
     background-color: #ecf0f1;
     color: #7f8c8d;
 }
+
+
+
+/* Style du bouton d'inscription (maintenant un lien stylisé) */
+.button-link { /* J'utilise la classe pour les styles par défaut */
+    display: block; /* Essentiel pour que margin: auto fonctionne et que le bouton prenne sa propre ligne */
+    width: fit-content; /* Le bouton prendra la largeur de son contenu */
+    margin: 30px auto; /* Centre le bouton et ajoute de l'espace au-dessus/en dessous */
+    padding: 15px 30px;
+    text-transform: uppercase;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #F0B20D; /* Couleur OR (jaune) pour le texte par défaut */
+    text-shadow: none;
+    background: transparent;
+    cursor: pointer;
+    box-shadow: transparent;
+    border: 2px solid #F0B20D; /* Bordure OR plus épaisse */
+    transition: 0.5s ease;
+    user-select: none;
+    text-decoration: none; /* TRÈS IMPORTANT : enlève le soulignement par défaut des liens */
+}
+
+.button-link:hover,
+.button-link:focus { /* J'utilise la classe pour les styles au survol/focus */
+    color: #FFFFFF; /* Texte blanc au survol */
+    background: #00224B; /* Fond CHARBON (bleu foncé) au survol */
+    border: 2px solid #00224B; /* Bordure CHARBON au survol */
+    text-shadow: 0 0 5px #FFFFFF, 0 0 10px #FFFFFF, 0 0 20px #FFFFFF;
+    box-shadow: 0 0 5px #00224B, 0 0 20px #00224B, 0 0 50px #00224B,
+      0 0 100px #00224B;
+}
+
 
 footer {
     text-align: center;
