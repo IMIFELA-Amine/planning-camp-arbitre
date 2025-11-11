@@ -5,11 +5,21 @@ body {
     color: #333;
 }
 
+.logo {
+    display: block; /* Important pour que 'margin: auto' fonctionne */
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 150px; /* Le logo ne sera jamais plus large que 150px */
+    height: auto;     /* Garde les proportions */
+    margin-bottom: 20px; /* Espace entre le logo et le titre H1 */
+}
+
 .container {
     max-width: 1400px;  /* La largeur max, "mi-rectangle" */
     margin: 30px auto;  /* 30px haut/bas, et "auto" gauche/droite pour CENTRER */
     padding: 0 15px;    /* Un peu d'espace sur les côtés (pour mobile) */
     box-sizing: border-box; /* Gère le padding correctement */
+
 }
 
 h1 {
@@ -57,7 +67,7 @@ tbody tr:hover {
 
 /* Style de la première colonne (Horaires) */
 tbody td:first-child {
-    width: 130px; /* Largeur fixe pour les horaires */
+    width: 180PX; /* Largeur fixe pour les horaires */
     font-weight: 700;
     text-align: center;
     background-color: #f9f9f9;
