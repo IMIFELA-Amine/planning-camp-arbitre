@@ -3,44 +3,42 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: #f4f7f6;
     color: #333;
+    margin: 0;
+    padding: 0;
 }
 
 .logo {
-    display: block; /* Important pour que 'margin: auto' fonctionne */
+    display: block;
     margin-left: auto;
     margin-right: auto;
-    max-width: 150px; /* Le logo ne sera jamais plus large que 150px */
-    height: auto;     /* Garde les proportions */
-    margin-bottom: 20px; /* Espace entre le logo et le titre H1 */
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 20px;
 }
 
 .table-responsive {
-    /* Permet au tableau de défiler horizontalement */
     overflow-x: auto; 
-    
-    /* Pour un défilement plus fluide sur iPhone/iPad */
     -webkit-overflow-scrolling: touch; 
-
-    /* Optionnel: pour s'assurer qu'il n'y ait pas de marge ou padding qui gêne le défilement */
-    margin-left: -15px; /* Compense le padding du .container */
-    margin-right: -15px; /* Compense le padding du .container */
-    padding-left: 15px; /* Ajoute un padding interne pour aligner le contenu du tableau */
-    padding-right: 15px; /* Ajoute un padding interne pour aligner le contenu du tableau */
 }
 
-/* Ajustement pour le container sur mobile, pour que le défilement du tableau soit fluide */
-@media (max-width: 768px) { /* Applique ces styles seulement sur les petits écrans */
+/* Ajustement pour le mobile uniquement */
+@media (max-width: 768px) {
     .container {
-        padding: 0; /* Supprime le padding du container pour que le tableau puisse prendre toute la largeur */
+        padding: 0; 
+    }
+    .table-responsive {
+        margin-left: -15px;
+        margin-right: -15px;
+        padding-left: 15px;
+        padding-right: 15px;
     }
 }
 
 .container {
-    max-width: 1400px;  /* La largeur max, "mi-rectangle" */
-    margin: 30px auto;  /* 30px haut/bas, et "auto" gauche/droite pour CENTRER */
-    padding: 0 15px;    /* Un peu d'espace sur les côtés (pour mobile) */
-    box-sizing: border-box; /* Gère le padding correctement */
-
+    max-width: 1400px;
+    margin: 30px auto;
+    padding: 0 15px;
+    box-sizing: border-box;
 }
 
 h1 {
@@ -51,11 +49,11 @@ h1 {
 
 /* Style du tableau */
 table {
-    width: 100%; /* Prend toute la largeur */
-    border-collapse: collapse; /* Belles bordures fusionnées */
+    width: 100%;
+    border-collapse: collapse;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     border-radius: 8px;
-    overflow: hidden; /* Pour que le radius s'applique aux coins */
+    overflow: hidden;
 }
 
 /* Style des cellules (en-tête et corps) */
@@ -63,12 +61,12 @@ th, td {
     border: 1px solid #e0e0e0;
     padding: 16px;
     text-align: center;
-    vertical-align: middle; /* Aligne le texte en haut */
+    vertical-align: middle;
 }
 
-/* Style de l'en-tête (bleu, comme dans l'exemple de la fac) */
+/* Style de l'en-tête */
 thead {
-    background-color: #34495e; /* Un bleu/gris foncé */
+    background-color: #34495e;
     color: white;
 }
 
@@ -79,67 +77,63 @@ thead th {
 
 /* Style du corps du tableau */
 tbody tr:nth-child(even) {
-    background-color: #fdfdfd; /* Une ligne sur deux légèrement grisée */
+    background-color: #fdfdfd;
 }
 
 tbody tr:hover {
-    background-color: #f0f4f8; /* Effet au survol */
+    background-color: #f0f4f8;
 }
 
 /* Style de la première colonne (Horaires) */
 tbody td:first-child {
-    width: 180PX; /* Largeur fixe pour les horaires */
+    width: 180px;
     font-weight: 700;
     text-align: center;
     background-color: #f9f9f9;
 }
 
 /* Style pour la ligne de la PAUSE */
-.pause-row td {
+td.pause-row {
     text-align: center;
     font-weight: bold;
     background-color: #ecf0f1;
     color: #7f8c8d;
 }
 
-
-
-/* Style du bouton d'inscription (maintenant un lien stylisé) */
-.button-link { /* J'utilise la classe pour les styles par défaut */
-    display: block; /* Essentiel pour que margin: auto fonctionne et que le bouton prenne sa propre ligne */
-    width: fit-content; /* Le bouton prendra la largeur de son contenu */
-    margin: 30px auto; /* Centre le bouton et ajoute de l'espace au-dessus/en dessous */
+/* Style du bouton d'inscription */
+.button-link {
+    display: block;
+    width: fit-content;
+    margin: 30px auto;
     padding: 15px 30px;
     text-transform: uppercase;
     border-radius: 8px;
     font-size: 18px;
     font-weight: 700;
-    color: #F0B20D; /* Couleur OR (jaune) pour le texte par défaut */
+    color: #F0B20D;
     text-shadow: none;
     background: transparent;
     cursor: pointer;
     box-shadow: transparent;
-    border: 2px solid #F0B20D; /* Bordure OR plus épaisse */
+    border: 2px solid #F0B20D;
     transition: 0.5s ease;
     user-select: none;
-    text-decoration: none; /* TRÈS IMPORTANT : enlève le soulignement par défaut des liens */
+    text-decoration: none;
 }
 
 .button-link:hover,
-.button-link:focus { /* J'utilise la classe pour les styles au survol/focus */
-    color: #FFFFFF; /* Texte blanc au survol */
-    background: #00224B; /* Fond CHARBON (bleu foncé) au survol */
-    border: 2px solid #00224B; /* Bordure CHARBON au survol */
+.button-link:focus {
+    color: #FFFFFF;
+    background: #00224B;
+    border: 2px solid #00224B;
     text-shadow: 0 0 5px #FFFFFF, 0 0 10px #FFFFFF, 0 0 20px #FFFFFF;
-    box-shadow: 0 0 5px #00224B, 0 0 20px #00224B, 0 0 50px #00224B,
-      0 0 100px #00224B;
+    box-shadow: 0 0 5px #00224B, 0 0 20px #00224B, 0 0 50px #00224B, 0 0 100px #00224B;
 }
-
 
 footer {
     text-align: center;
-    margin-top: 30px; /* Espace au-dessus du copyright */
+    margin-top: 30px;
     padding: 15px;
-    font-size: 0.9em; /* Texte légèrement plus petit */
-    color: #7f8c8d; /* Couleur grise discrète */
+    font-size: 0.9em;
+    color: #7f8c8d;
 }
